@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conversor de Temperaturas</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        input {
+            padding: 15px;
+            background-color: lightgray;
+            border-color: lightgray;
+        }
+
+        div {
+            line-height: 32px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Conversor de Temperaturas</h1>
+    <input type="button" value="Converter" onclick="converter()">
+    <p>
+        Clique no botão acima para iniciar.
+    </p>
+    <div>
+
+    </div>
+    <script>
+        function converter() {
+            var tempC = Number(prompt('Digite uma temperatura em graus Celsius (°C)'))
+            var tempK = tempC + 273.15
+            var tempF = tempC*1.8 + 32
+            var res = document.querySelector('p')
+            var res2 = document.querySelector('div')
+            res.innerHTML = `A temperatura de ${tempC} °C, corresponde a...`
+            res.style.fontSize = '18px'
+            res.style.fontWeight = 'bolder'
+            res2.innerHTML = `${tempK.toFixed(2).replace(".",",")}°K (Kelvin)<br>${tempF.toFixed(2).replace(".",",")}°F (Fahrenheit)`
+        }
+    </script>
+</body>
+</html>
